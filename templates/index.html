@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encryption Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(#1c1917 50%, #66FcF1 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #1c1917;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1c1917;
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #66FcF1;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .card-description {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dashboard Page -->
+    <div class="container">
+        <h1><u>Encryption Dashboard</u></h1>
+        <div class="cards">
+            <!-- Card for Caesar Cipher -->
+            <div class="card" onclick="redirectTo('/caeser')">
+                <div class="card-title">Caesar Cipher</div>
+                <div class="card-description">
+                    Encrypt and decrypt text using the Caesar cipher. A simple yet classic encryption method.
+                </div>
+            </div>
+
+            <!-- Placeholder for Additional Encryption Methods -->
+            <div class="card" onclick="redirectTo('/vigenere')">
+                <div class="card-title">Vigenère Cipher</div>
+                <div class="card-description">
+                    A more advanced cipher based on the Caesar cipher with a keyword.
+                </div>
+            </div>
+            <div class="card" onclick="alert('Coming Soon!')">
+                <div class="card-title">Rail Fence Cipher</div>
+                <div class="card-description">
+                    A transposition cipher that rearranges text in a zigzag pattern across multiple rails.
+                </div>
+            </div>
+            <div class="card" onclick="redirectTo('/bacon')">
+                <div class="card-title">Bacon Cipher</div>
+                <div class="card-description">
+                    A steganographic cipher that encodes messages using binary representations of letters.
+                </div>
+            </div>
+            <div class="card" onclick="redirectTo('/base64')">
+                <div class="card-title">Base 64</div>
+                <div class="card-description">
+                    Base64 is a binary to a text encoding scheme that represents binary data in an American Standard Code for Information Interchange (ASCII) string format
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectTo(path) {
+            window.location.href = path;
+        }
+    </script>
+</body>
+</html>
